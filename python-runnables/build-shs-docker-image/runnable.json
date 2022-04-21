@@ -1,14 +1,9 @@
 /* This file is the descriptor for the python runnable build-shs-docker-image */
 {
     "meta": {
-        // label: name of the runnable as displayed, should be short
-        "label": "Custom runnable build-shs-docker-image",
-
-        // description: longer string to help end users understand what this runnable does
+        "label": "Build Spark History Server Docker Image",
         "description": "",
-
-        // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-puzzle-piece" // https://fontawesome.com/v3.2.1/icons/
     },
 
     /* whether the runnable's code is untrusted */
