@@ -26,5 +26,19 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        spark_image = self.config["spark_"]
+        
+        dockerfile = """
+            FROM {0}
+
+            USER root
+            COPY entrypoint.sh /home/dataiku/
+            RUN chown dataiku:dataiku /home/dataiku/entrypoint.sh \
+                && chmod +x /home/dataiku/entrypoint.sh
+
+            USER dataiku
+            ENTRYPOINT ["/home/dataiku/entrypoint.sh"]""".format(spark_image)
+        
+        
         raise Exception("unimplemented")
         
