@@ -48,6 +48,8 @@ class MyRunnable(Runnable):
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
+        shutil.rmtree(tmp_folder)
+        shutil.rmtree(tmp_folder)
         try:
             os.mkdir(tmp_folder)
         except:
