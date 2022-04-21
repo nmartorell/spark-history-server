@@ -3,7 +3,7 @@
     "meta": {
         "label": "Build Spark History Server Docker Image",
         "description": "",
-        "icon": "icon-puzzle-piece" // https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-picture" // https://fontawesome.com/v3.2.1/icons/
     },
 
     /* whether the runnable's code is untrusted */
