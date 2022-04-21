@@ -1,5 +1,6 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
+from sparkhistoryserver import entrypoint
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
@@ -49,10 +50,12 @@ class MyRunnable(Runnable):
         f.writelines(dockerfile)
         f.close()
         
-        
+        f = open(tmp_folder+"entrypoint.sh", mode="w")
+        f.writelines(entrypoint)
+        f.close()
         
         # build shs base image
-        docker_client.images.build(path=resource_path, tag="spark-history-server2:{}".format(dss_version))
+        docker_client.images.build(path=tmp_folder, tag="spark-history-server2:{}".format(dss_version))
         
         
         return None
