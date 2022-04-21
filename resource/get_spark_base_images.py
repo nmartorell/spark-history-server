@@ -13,5 +13,4 @@ def do(payload, config, plugin_config, inputs):
     choices = [{"label":tag, "value":tag} for tag in spark_image_tags]
     
     print(choices)
-    asdf
     return {"choices" : choices}
