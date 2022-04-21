@@ -26,7 +26,7 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
-        spark_image = self.config["spark_"]
+        spark_image = self.config["spark-base-image"]
         
         dockerfile = """
             FROM {0}
