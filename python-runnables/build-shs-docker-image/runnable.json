@@ -14,7 +14,7 @@
         {
             "name": "spark-base-image",
             "label": "Docker image",
-            "description": "Select the spark docker image on which to base the history server.",
+            "description": "Select the spark docker image on which to base the history server image.",
             "type": "SELECT",
             "getChoicesFromPython": true
         }
