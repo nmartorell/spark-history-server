@@ -48,6 +48,8 @@ class MyRunnable(Runnable):
         tmp_folder = "/tmp/shs-docker-env/"
         try:
             os.mkdir(tmp_folder)
+        except:
+            pass
         
         f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
