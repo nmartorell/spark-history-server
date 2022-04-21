@@ -48,12 +48,12 @@ class MyRunnable(Runnable):
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
-        shutil.rmtree(tmp_folder)
-        shutil.rmtree(tmp_folder)
         try:
-            os.mkdir(tmp_folder)
+            shutil.rmtree(tmp_folder)
         except:
             pass
+        finally:
+            os.mkdir(tmp_folder)
         
         f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
@@ -67,6 +67,8 @@ class MyRunnable(Runnable):
         docker_client = docker.from_env()
         docker_client.images.build(path=tmp_folder, tag="spark-history-server:{}".format(dss_version))
         
+        # remove tmp folder
+        shutil.rmtree(tmp_folder)
         
         return None
         
