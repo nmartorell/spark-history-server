@@ -2,6 +2,7 @@
 from dataiku.runnables import Runnable
 from sparkhistoryserver import entrypoint
 import os
+import docker
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
