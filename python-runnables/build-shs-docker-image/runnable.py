@@ -1,6 +1,7 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
 from sparkhistoryserver import entrypoint
+import os
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
@@ -45,6 +46,7 @@ class MyRunnable(Runnable):
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
+        os.mkdir(tmp_folder)
         
         f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
