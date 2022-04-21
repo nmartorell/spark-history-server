@@ -46,7 +46,8 @@ class MyRunnable(Runnable):
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
-        os.mkdir(tmp_folder)
+        try:
+            os.mkdir(tmp_folder)
         
         f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
