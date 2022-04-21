@@ -11,4 +11,5 @@ def do(payload, config, plugin_config, inputs):
     for img in docker_client.images.list("dataiku-dss-spark-exec-base"):
         spark_image_tags.append(next(x for x in img.tags if "dataiku-dss-spark-exec-base" in x))
 
-    return [{"label":tag, "value":tag} for tag in spark_image_tags]
+    choices = [{"label":tag, "value":tag} for tag in spark_image_tags]
+    return {"choices" : choices}
