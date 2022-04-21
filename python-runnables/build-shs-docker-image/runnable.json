@@ -19,40 +19,13 @@
             "getChoicesFromPython": true
         }
     ],
+    
+    "requiresGlobalAdmin": true,
+    "permissions": ["ADMIN"],
 
-    /* list of required permissions on the project to see/run the runnable */
-    "permissions": [],
-
-    /* what the code's run() returns:
-       - NONE : no result
-       - HTML : a string that is a html (utf8 encoded)
-       - FOLDER_FILE : a (folderId, path) pair to a file in a folder of this project (json-encoded)
-       - FILE : raw data (as a python string) that will be stored in a temp file by DSS
-       - URL : a url
-     */
-    "resultType": "HTML",
-
-    /* label to use when the runnable's result is not inlined in the UI (ex: for urls) */
-    "resultLabel": "my production",
-
-    /* for FILE resultType, the extension to use for the temp file */
-    "extension": "txt",
-
-    /* for FILE resultType, the type of data stored in the temp file */
-    "mimeType": "text/plain",
-
-    /* Macro roles define where this macro will appear in DSS GUI. They are used to pre-fill a macro parameter with context.
-
-       Each role consists of:
-        - type: where the macro will be shown
-            * when selecting DSS object(s): DATASET, DATASETS, API_SERVICE, API_SERVICE_VERSION, BUNDLE, VISUAL_ANALYSIS, SAVED_MODEL, MANAGED_FOLDER
-            * in the global project list: PROJECT_MACROS
-        - targetParamsKey(s): name of the parameter(s) that will be filled with the selected object
-    */
     "macroRoles": [
-     /* {
-            "type": "DATASET",
-            "targetParamsKey": "input_dataset"
-        } */
+        {
+            "type": "PROJECT_MACROS"
+        } 
     ]
 }
