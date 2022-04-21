@@ -65,5 +65,5 @@ class MyRunnable(Runnable):
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
-        return None
+        return None #TODO: return image name
         
