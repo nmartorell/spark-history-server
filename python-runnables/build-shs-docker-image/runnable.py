@@ -57,6 +57,7 @@ class MyRunnable(Runnable):
         f.close()
         
         # build shs base image
+        docker_client = docker.from_env()
         docker_client.images.build(path=tmp_folder, tag="spark-history-server2:{}".format(dss_version))
         
         
