@@ -26,8 +26,11 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        # get spark image name, and dss version, from config
         spark_image = self.config["spark-base-image"]
+        dss_version = spark_image.split(":")[1]
         
+        # generate dockerfile template
         dockerfile = """
             FROM {0}
 
@@ -39,6 +42,17 @@ class MyRunnable(Runnable):
             USER dataiku
             ENTRYPOINT ["/home/dataiku/entrypoint.sh"]""".format(spark_image)
         
+        # write dockerfile to plugin resources directory
+        resource_path = "../../resource/"
+        f = open(resource_path+"dockerfile", mode="w")
+        f.writelines(dockerfile)
         
-        raise Exception("unimplemented")
+        # build shs base image
+        docker_client.images.build(path=resource_path, tag="spark-history-server:{}".format(dss_version))
+        
+        # clear and close dockerfile
+        f.truncate(0)
+        f.close()
+        
+        return None
         
