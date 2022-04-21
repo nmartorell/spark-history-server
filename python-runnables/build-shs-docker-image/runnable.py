@@ -42,17 +42,18 @@ class MyRunnable(Runnable):
             USER dataiku
             ENTRYPOINT ["/home/dataiku/entrypoint.sh"]""".format(spark_image)
         
-        # write dockerfile to plugin resources directory
-        resource_path = "../../resource/"
-        f = open(resource_path+"dockerfile", mode="w")
+        # write dockerfile and entrypoint.sh to tmp directory
+        tmp_folder = "/tmp/shs-docker-env/"
+        
+        f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
+        f.close()
+        
+        
         
         # build shs base image
         docker_client.images.build(path=resource_path, tag="spark-history-server2:{}".format(dss_version))
         
-        # clear and close dockerfile
-        f.truncate(0)
-        f.close()
         
         return None
         
