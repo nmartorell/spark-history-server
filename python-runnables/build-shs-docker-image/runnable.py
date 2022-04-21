@@ -48,7 +48,7 @@ class MyRunnable(Runnable):
         f.writelines(dockerfile)
         
         # build shs base image
-        docker_client.images.build(path=resource_path, tag="spark-history-server:{}".format(dss_version))
+        docker_client.images.build(path=resource_path, tag="spark-history-server2:{}".format(dss_version))
         
         # clear and close dockerfile
         f.truncate(0)
