@@ -9,6 +9,7 @@
     /* whether the runnable's code is untrusted */
     "impersonate": false,
     
+    "paramsPythonSetup": "get_base_images.py",
     "params": [
         {
             "name": "spark-base-image",
