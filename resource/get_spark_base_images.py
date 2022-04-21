@@ -11,6 +11,4 @@ def do(payload, config, plugin_config, inputs):
         spark_image_tags.append(next(x for x in img.tags if "dataiku-dss-spark-exec-base" in x))
 
     choices = [{"label":tag, "value":tag} for tag in spark_image_tags]
-    
-    print(choices)
     return {"choices" : choices}
