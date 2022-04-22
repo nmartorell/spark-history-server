@@ -3,7 +3,7 @@
     "meta": {
         "label": "Start Spark History Server",
         "description": "",
-        "icon": "icon-picture" // https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-play" // https://fontawesome.com/v3.2.1/icons/
     },
 
     /* whether the runnable's code is untrusted */
