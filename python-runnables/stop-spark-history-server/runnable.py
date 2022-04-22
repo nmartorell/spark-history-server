@@ -27,7 +27,11 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        docker_client = docker.from_env()
         
+        for container in docker_client.containers.list():
+            if container.name == "spark-history-server":
+                container.stop()
         
         raise Exception("unimplemented")
         
