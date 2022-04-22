@@ -58,7 +58,7 @@ class MyRunnable(Runnable):
         shutil.rmtree(tmp_folder)
         
         # return fake percentage progress - 50%
-        self.get_progress_target(50)
+        progress_callback(50)
         
         # start spark history server -- use dummy vars for now, need to build command later
         port = 18080
@@ -73,7 +73,7 @@ class MyRunnable(Runnable):
                                      command=command)
         
         # return fake percentage progress - 100%
-        self.get_progress_target(100)
+        progress_callback(100)
         
         return None #TODO: return image name
         
