@@ -1,5 +1,6 @@
 # This file is the actual code for the Python runnable start-shs-on-docker
 from dataiku.runnables import Runnable
+import docker
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
@@ -26,5 +27,7 @@ class MyRunnable(Runnable):
         Do stuff here. Can return a string or raise an exception.
         The progress_callback is a function expecting 1 value: current progress
         """
+        
+        
         raise Exception("unimplemented")
         
