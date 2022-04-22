@@ -66,16 +66,10 @@ class MyRunnable(Runnable):
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
-        # start spark history server -- use dummy vars for now, need to build command later
+        # start spark history server 
         port = self.config["port"]
-        cloud = "s3"
-        s3_access_key = "AKIAUKG7R5HWVTOYGSYF"
-        s3_secret_key = "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"
-        events_dir = "ned-martorell/shs"
-        
-        command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
-        
         command = generate_entrypoint_command(self.config)
+        
         docker_client.containers.run(image=shs_image_obj.tags[0], 
                                      ports={'18080/tcp': port},
                                      command=command,
