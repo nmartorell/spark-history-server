@@ -11,4 +11,4 @@ def generate_entrypoint_command(config):
     elif cloud_storage == "gcs":
         
     else:
-        raise Exception("this shouldn't happen")
+        raise Exception("this shouldn't happen.")
