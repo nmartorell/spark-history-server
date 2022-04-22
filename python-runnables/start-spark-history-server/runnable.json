@@ -1,7 +1,7 @@
 /* This file is the descriptor for the python runnable build-shs-docker-image */
 {
     "meta": {
-        "label": "Build Spark History Server Docker Image",
+        "label": "Start Spark History Server",
         "description": "",
         "icon": "icon-picture" // https://fontawesome.com/v3.2.1/icons/
     },

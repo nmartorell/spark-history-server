@@ -2,7 +2,7 @@
 {
     "meta": {
         // label: name of the runnable as displayed, should be short
-        "label": "Custom runnable start-shs-on-docker",
+        "label": "Stop Spark History Server",
 
         // description: longer string to help end users understand what this runnable does
         "description": "",
