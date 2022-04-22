@@ -75,5 +75,5 @@ class MyRunnable(Runnable):
                                      command=command,
                                      detach=True)
         
-        return None #TODO: return image name
+        return "Success"
         
