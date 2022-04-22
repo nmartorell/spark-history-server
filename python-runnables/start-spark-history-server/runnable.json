@@ -18,6 +18,14 @@
             "type": "SELECT",
             "getChoicesFromPython": true
         },
+        
+        {
+            "type": "INT",
+            "name": "port",
+            "label": "Port",
+            "description": "Port to expose the Spark History Server"
+        },
+        
         {
             "name": "cloud_storage",
             "label": "Cloud Storage",
