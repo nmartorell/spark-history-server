@@ -59,7 +59,7 @@ class MyRunnable(Runnable):
         docker_client = docker.from_env()
         shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:{}".format(dss_version))
         
-        print(shs_image_obj.tags, shs_image_obj.short_id[6:])
+        print(shs_image_obj.tags, shs_image_obj.short_id[6:-1])
         asdf
         
         # remove tmp folder
