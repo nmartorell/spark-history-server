@@ -40,10 +40,11 @@ class MyRunnable(Runnable):
         #dockerfile = dockerfile.format(spark_image)
         
         # write dockerfile and entrypoint.sh to tmp directory
-            try: 
-        
         tmp_folder = "/tmp/shs-docker-env/"
-        os.mkdir(tmp_folder)
+        try:
+            shutil.rmtree(tmp_folder)
+        except:
+            os.mkdir(tmp_folder)
         
         f = open(tmp_folder+"dockerfile", mode="w")
         f.writelines(dockerfile)
