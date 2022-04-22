@@ -57,9 +57,6 @@ class MyRunnable(Runnable):
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
-        # return fake percentage progress - 50%
-        progress_callback(50)
-        
         # start spark history server -- use dummy vars for now, need to build command later
         port = 18080
         cloud = "s3"
@@ -71,9 +68,6 @@ class MyRunnable(Runnable):
         docker_client.containers.run(image=shs_image, 
                                      ports={'18080/tcp': port},
                                      command=command)
-        
-        # return fake percentage progress - 100%
-        progress_callback(100)
         
         return None #TODO: return image name
         
