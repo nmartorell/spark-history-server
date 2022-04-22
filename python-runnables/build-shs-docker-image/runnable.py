@@ -1,6 +1,6 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
-from dku_docker.templates import dockerfile, entrypoint
+from dku_docker.templates import dockerfile_template, entrypoint
 
 import os
 import shutil
@@ -37,7 +37,7 @@ class MyRunnable(Runnable):
         
         # generate dockerfile from template
         print(dockerfile)
-        #dockerfile = dockerfile.format(spark_image)
+        dockerfile = dockerfile_template.format(spark_image)
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
