@@ -75,5 +75,5 @@ class MyRunnable(Runnable):
                                      command=command,
                                      detach=True)
         
-        return "Spark History Server successfully started on port {}"
+        return "Spark History Server successfully started on port {0}".format(port)
         
