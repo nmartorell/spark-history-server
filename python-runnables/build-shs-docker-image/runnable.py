@@ -1,6 +1,6 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
-from dku_docker.templatess import dockerfile
+from dku_docker.templates import dockerfile
 
 import os
 import shutil
@@ -36,6 +36,7 @@ class MyRunnable(Runnable):
         dss_version = spark_image.split(":")[1]
         
         # generate dockerfile from template
+        print(dockerfile)
         dockerfile = dockerfile.format(spark_image)
         
         # write dockerfile and entrypoint.sh to tmp directory
