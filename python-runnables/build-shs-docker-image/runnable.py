@@ -19,12 +19,12 @@ class MyRunnable(Runnable):
         self.config = config
         self.plugin_config = plugin_config
         
-    def get_progress_target(self):
+    def get_progress_target(self, percent):
         """
         If the runnable will return some progress info, have this function return a tuple of 
         (target, unit) where unit is one of: SIZE, FILES, RECORDS, NONE
         """
-        return None
+        return (percent, "NONE")
 
     def run(self, progress_callback):
         """
