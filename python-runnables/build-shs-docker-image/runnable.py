@@ -66,6 +66,7 @@ class MyRunnable(Runnable):
         events_dir = "ned-martorell/shs"
         
         command = "--s3 false {0} {1} --events-dir s3a://{2}".format(s3_access_key, s3_secret_key, events_dir)
+        docker_client.
         
         # return fake percentage progress - 100%
         self.get_progress_target(100)
