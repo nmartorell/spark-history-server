@@ -37,6 +37,26 @@
                 { "value" : "gcs", "label" : "Google Cloud Storage (GCS)"}
             ],
             "mandatory": true
+        },
+        
+        {
+            "name": "aws_access_key",
+            "label": "AWS Access Key",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 's3'"
+        },
+        {
+            "name": "aws_secret_key",
+            "label": "AWS Secret Key",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 's3'"
+        },
+        {
+            "name": "s3_events_dir",
+            "label": "Events Directory",
+            "description" : "format <bucket name>/<path/to/logs directory>",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 's3'"
         }
     ],
     
