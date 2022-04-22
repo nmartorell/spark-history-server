@@ -57,5 +57,17 @@ class MyRunnable(Runnable):
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
+        # return fake percentage progress - 50%
+        self.get_progress_target(50)
+        
+        # start spark history server -- use dummy vars for now, need to build command later
+        s3_access_key = "AKIAUKG7R5HWVTOYGSYF"
+        s3_secre_key = "4ENpGUzf6CisQidY1aS+nowIFBBwaYdH/eKJlmyx"
+        events_dir = "ned-martorell/shs"
+        
+        
+        # return fake percentage progress - 100%
+        self.get_progress_target(100)
+        
         return None #TODO: return image name
         
