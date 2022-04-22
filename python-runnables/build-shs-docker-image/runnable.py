@@ -1,6 +1,7 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
-from sparkhistoryserver import entrypoint
+from dku_docker.templates import entrypoint, dockerfile
+
 import os
 import docker
 import shutil
@@ -34,17 +35,8 @@ class MyRunnable(Runnable):
         spark_image = self.config["spark-base-image"]
         dss_version = spark_image.split(":")[1]
         
-        # generate dockerfile template
-        dockerfile = """
-            FROM {0}
-
-            USER root
-            COPY entrypoint.sh /home/dataiku/
-            RUN chown dataiku:dataiku /home/dataiku/entrypoint.sh \
-                && chmod +x /home/dataiku/entrypoint.sh
-
-            USER dataiku
-            ENTRYPOINT ["/home/dataiku/entrypoint.sh"]""".format(spark_image)
+        # generate dockerfile from template
+        dockerfile = dockerfile.format(spark_image)
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
