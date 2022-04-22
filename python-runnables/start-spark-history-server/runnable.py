@@ -67,7 +67,7 @@ class MyRunnable(Runnable):
         shutil.rmtree(tmp_folder)
         
         # start spark history server -- use dummy vars for now, need to build command later
-        port = 18080
+        port = self.config["port"]
         cloud = "s3"
         s3_access_key = "AKIAUKG7R5HWVTOYGSYF"
         s3_secret_key = "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"
