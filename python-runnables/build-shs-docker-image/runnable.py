@@ -65,6 +65,7 @@ class MyRunnable(Runnable):
         s3_secre_key = "4ENpGUzf6CisQidY1aS+nowIFBBwaYdH/eKJlmyx"
         events_dir = "ned-martorell/shs"
         
+        command = "--s3 false {0} {1} --events-dir s3a://{2}".format(s3_access_key, s3_secret_key, events_dir)
         
         # return fake percentage progress - 100%
         self.get_progress_target(100)
