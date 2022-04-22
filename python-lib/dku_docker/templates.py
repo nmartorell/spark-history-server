@@ -1,4 +1,4 @@
-dockerfile = """
+dockerfile_template = """
     FROM {0}
 
     USER root
