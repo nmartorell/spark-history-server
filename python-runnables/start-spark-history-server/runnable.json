@@ -103,7 +103,8 @@
     
     "requiresGlobalAdmin": true,
     "permissions": ["ADMIN"],
-
+    
+    "resultType" : "HTML",
     "macroRoles": [
         {
             "type": "PROJECT_MACROS"
