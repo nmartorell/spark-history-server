@@ -66,7 +66,7 @@ class MyRunnable(Runnable):
         port = 18080
         cloud = "s3"
         s3_access_key = "AKIAUKG7R5HWVTOYGSYF"
-        s3_secre_key = "4ENpGUzf6CisQidY1aS+nowIFBBwaYdH/eKJlmyx"
+        s3_secret_key = "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"
         events_dir = "ned-martorell/shs"
         
         command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
