@@ -1,7 +1,7 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
 from dku_docker.templates import dockerfile_template, entrypoint
-from dku_docker.utils import 
+from dku_docker.utils import generate_plugin_config
 
 import os
 import shutil
