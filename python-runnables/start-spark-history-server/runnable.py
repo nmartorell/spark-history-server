@@ -58,10 +58,17 @@ class MyRunnable(Runnable):
         
         # build shs base image
         docker_client = docker.from_env()
-        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:{0}".format(dss_version))
+        shs_image_tag = "spark-history-server:{0}".format(dss_version)
+        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag=shs_image_tag)
         
         # remove tmp folder
         shutil.rmtree(tmp_folder)
+        
+        # check if the spark history server is already running for this image -- if so, exit
+        #for container in docker_client.containers.list():
+        #    for tag in container.image.tags:
+        #        if tag == shs_image_tag:
+        #            return "Spark Hisotry Server already started"
         
         # start spark history server 
         port = self.config["port"]
