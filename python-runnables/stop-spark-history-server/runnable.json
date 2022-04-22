@@ -3,7 +3,7 @@
     "meta": {
         "label": "Stop Spark History Server",
         "description": "Stops the running Spark History Server (if any).",
-        "icon": "icon-puzzle-piece" // https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-stop" // https://fontawesome.com/v3.2.1/icons/
     },
 
     /* whether the runnable's code is untrusted */
