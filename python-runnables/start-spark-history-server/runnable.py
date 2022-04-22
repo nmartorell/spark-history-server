@@ -58,7 +58,7 @@ class MyRunnable(Runnable):
         
         # build shs base image
         docker_client = docker.from_env()
-        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:latest") #:{}".format(dss_version))
+        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:latest:{}".format(dss_version))
         
         # remove tmp folder
         shutil.rmtree(tmp_folder)
