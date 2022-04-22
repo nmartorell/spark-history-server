@@ -6,6 +6,8 @@ def generate_entrypoint_command(config):
     cloud_storage = config["cloud_storage"]
     if cloud_storage == "s3":
         
+        
+        
     elif cloud_storage == "wasbs":
         
     elif cloud_storage == "gcs":
