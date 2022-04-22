@@ -23,7 +23,8 @@
             "type": "INT",
             "name": "port",
             "label": "Port",
-            "description": "Port to expose the Spark History Server"
+            "description": "Port to expose the Spark History Server",
+            "defaultValue": 18080
         },
         
         {
