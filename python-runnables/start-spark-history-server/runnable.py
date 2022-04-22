@@ -75,7 +75,8 @@ class MyRunnable(Runnable):
         command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
         docker_client.containers.run(image=shs_image_obj.tags[0], 
                                      ports={'18080/tcp': port},
-                                     command=command)
+                                     command=command,
+                                     detach=True)
         
         return None #TODO: return image name
         
