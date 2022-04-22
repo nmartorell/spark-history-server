@@ -10,8 +10,7 @@ USER dataiku
 ENTRYPOINT ["/home/dataiku/entrypoint.sh"]
 """
 
-entrypoint = """
-#!/usr/bin/env bash
+entrypoint = """#!/usr/bin/env bash
 
 # Taken from: https://github.com/lightbend/spark-history-server-docker/blob/master/entrypoint.sh
 
