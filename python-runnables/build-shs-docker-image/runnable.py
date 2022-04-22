@@ -43,7 +43,7 @@ class MyRunnable(Runnable):
         tmp_folder = "/tmp/shs-docker-env/"
         try:
             shutil.rmtree(tmp_folder)
-        except:
+        finally:
             os.mkdir(tmp_folder)
         
         f = open(tmp_folder+"dockerfile", mode="w")
