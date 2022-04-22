@@ -75,7 +75,6 @@
         {
             "name": "storage_account_key",
             "label": "Storage Account Key",
-            "description" : "format </path/to/logs directory>",
             "type": "STRING",
             "visibilityCondition" : "model.cloud_storage == 'wasbs'"
         },
