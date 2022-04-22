@@ -1,7 +1,7 @@
 # This file is the actual code for the Python runnable build-shs-docker-image
 from dataiku.runnables import Runnable
 from dku_docker.templates import dockerfile_template, entrypoint
-from dku_docker.utils import generate_plugin_command
+from dku_docker.utils import generate_entrypoint_command
 
 import os
 import shutil
@@ -74,6 +74,7 @@ class MyRunnable(Runnable):
         events_dir = "ned-martorell/shs"
         
         command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
+        command = generate_entrypoint_command(self.config)
         docker_client.containers.run(image=shs_image_obj.tags[0], 
                                      ports={'18080/tcp': port},
                                      command=command,
