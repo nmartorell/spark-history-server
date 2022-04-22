@@ -12,6 +12,7 @@ dockerfile_template = """
 
 entrypoint = """
     #!/usr/bin/env bash
+    
     # Taken from: https://github.com/lightbend/spark-history-server-docker/blob/master/entrypoint.sh
 
     # echo commands to the terminal output
