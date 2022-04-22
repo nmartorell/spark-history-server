@@ -60,9 +60,6 @@ class MyRunnable(Runnable):
         docker_client = docker.from_env()
         shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:latest") #:{}".format(dss_version))
         
-        print(shs_image_obj.tags, shs_image_obj.short_id[6:-1])
-       #sdf
-        
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
@@ -70,7 +67,7 @@ class MyRunnable(Runnable):
         port = self.config["port"]
         command = generate_entrypoint_command(self.config)
         
-        docker_client.containers.run(image=shs_image_obj.tags[0], 
+        docker_client.containers.run(image=shs_image_obj.id, 
                                      ports={'18080/tcp': port},
                                      command=command,
                                      detach=True)
