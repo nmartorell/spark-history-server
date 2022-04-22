@@ -67,7 +67,7 @@ class MyRunnable(Runnable):
         # check if the spark history server is already running for this image -- if so, exit
         for container in docker_client.containers.list():
             for tag in container.image.tags:
-                if tag == shs_image_tag:
+                if shs_image_tag.split(":")[0] in tag:
                     return "Spark History Server already started. Please stop before restarting."
         
         # start spark history server 
