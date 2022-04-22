@@ -36,8 +36,8 @@ class MyRunnable(Runnable):
         dss_version = spark_image.split(":")[1]
         
         # generate dockerfile from template
-        print(dockerfile)
-        dockerfile = dockerfile.format(spark_image)
+        #print(dockerfile)
+        #dockerfile = dockerfile.format(spark_image)
         
         # write dockerfile and entrypoint.sh to tmp directory
         tmp_folder = "/tmp/shs-docker-env/"
