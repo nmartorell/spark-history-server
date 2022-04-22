@@ -61,11 +61,13 @@ class MyRunnable(Runnable):
         self.get_progress_target(50)
         
         # start spark history server -- use dummy vars for now, need to build command later
+        port = 18080
+        cloud = "s3"
         s3_access_key = "AKIAUKG7R5HWVTOYGSYF"
         s3_secre_key = "4ENpGUzf6CisQidY1aS+nowIFBBwaYdH/eKJlmyx"
         events_dir = "ned-martorell/shs"
         
-        command = "--s3 false {0} {1} --events-dir s3a://{2}".format(s3_access_key, s3_secret_key, events_dir)
+        command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
         docker_client.
         
         # return fake percentage progress - 100%
