@@ -66,9 +66,8 @@ class MyRunnable(Runnable):
         
         # check if the spark history server is already running for this image -- if so, exit (only one spark history server pe)
         for container in docker_client.containers.list():
-            for tag in container.image.tags:
-                if tag == shs_image_tag:
-                    return "Spark History Server already started. Please stop before restarting."
+            if conatiner.name == "spark-history-server":
+                return "Spark History Server already started. Please stop before restarting."
         
         # start spark history server 
         port = self.config["port"]
@@ -77,7 +76,8 @@ class MyRunnable(Runnable):
         docker_client.containers.run(image=shs_image_obj.id, 
                                      ports={'18080/tcp': port},
                                      command=command,
-                                     detach=True)
+                                     detach=True,
+                                     name="spark-history-server")
         
         return "Spark History Server successfully started on port {0}.".format(port)
         
