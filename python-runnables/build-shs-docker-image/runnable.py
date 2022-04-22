@@ -73,7 +73,7 @@ class MyRunnable(Runnable):
         events_dir = "ned-martorell/shs"
         
         command = "--{0} false {1} {2} --events-dir s3a://{3}".format(cloud, s3_access_key, s3_secret_key, events_dir)
-        docker_client.containers.run(image=shs_image_obj.short_id[6:-1], 
+        docker_client.containers.run(image=shs_image_obj.tags[0], 
                                      ports={'18080/tcp': port},
                                      command=command)
         
