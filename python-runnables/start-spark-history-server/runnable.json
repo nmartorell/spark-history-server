@@ -58,6 +58,47 @@
             "description" : "format <bucket name>/<path/to/logs directory>",
             "type": "STRING",
             "visibilityCondition" : "model.cloud_storage == 's3'"
+        },
+        
+        {
+            "name": "storage_account_name",
+            "label": "Storage Account Name",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'wasbs'"
+        },
+        {
+            "name": "container_name",
+            "label": "Container Name",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'wasbs'"
+        },
+        {
+            "name": "storage_account_key",
+            "label": "Storage Account Key",
+            "description" : "format </path/to/logs directory>",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'wasbs'"
+        },
+        {
+            "name": "wasbs_events_dir",
+            "label": "Events Directory",
+            "description" : "format </path/to/logs directory>",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'wasbs'"
+        },
+        
+        {
+            "name": "gcloud_key",
+            "label": "GCloud Key",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'gcs'"
+        },
+        {
+            "name": "gcs_events_dir",
+            "label": "Events Directory",
+            "description" : "format </path/to/logs directory>",
+            "type": "STRING",
+            "visibilityCondition" : "model.cloud_storage == 'gcs'"
         }
     ],
     
