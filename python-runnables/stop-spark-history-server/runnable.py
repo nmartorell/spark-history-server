@@ -30,7 +30,7 @@ class MyRunnable(Runnable):
         docker_client = docker.from_env()
         
         for container in docker_client.containers.list():
-            if container.name == "spark-history-server":
+            if container.name == "spark_history_server":
                 container.stop()
                 return "Spark History Server successfully stopped."
         
