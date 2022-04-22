@@ -7,8 +7,9 @@ def generate_entrypoint_command(config):
     if cloud_storage == "s3":
         aws_access_key = config["aws_access_key"]
         aws_secret_key = config["aws_secret_key"]
-        s3_events_dir = 
+        s3_events_dir = config["s3_events_dir"]
         
+        command = 
         
     elif cloud_storage == "wasbs":
         
