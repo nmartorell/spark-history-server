@@ -58,7 +58,7 @@ class MyRunnable(Runnable):
         
         # build shs base image
         docker_client = docker.from_env()
-        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server:{}".format(dss_version))
+        shs_image_obj, _ =  docker_client.images.build(path=tmp_folder, tag="spark-history-server") #:{}".format(dss_version))
         
         print(shs_image_obj.tags, shs_image_obj.short_id[6:-1])
        #sdf
@@ -75,5 +75,5 @@ class MyRunnable(Runnable):
                                      command=command,
                                      detach=True)
         
-        return "Success"
+        return "Spark History Server successfully started on port {}"
         
