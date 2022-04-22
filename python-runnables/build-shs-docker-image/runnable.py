@@ -3,8 +3,8 @@ from dataiku.runnables import Runnable
 from dku_docker.templates import entrypoint, dockerfile
 
 import os
-import docker
 import shutil
+import docker
 
 class MyRunnable(Runnable):
     """The base interface for a Python runnable"""
