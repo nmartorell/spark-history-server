@@ -64,10 +64,10 @@ class MyRunnable(Runnable):
         # remove tmp folder
         shutil.rmtree(tmp_folder)
         
-        # check if the spark history server is already running for this image -- if so, exit
+        # check if the spark history server is already running for this image -- if so, exit (only one spark history server pe)
         for container in docker_client.containers.list():
             for tag in container.image.tags:
-                if shs_image_tag.split(":")[0] in tag:
+                if tag == shs_image_tag:
                     return "Spark History Server already started. Please stop before restarting."
         
         # start spark history server 
